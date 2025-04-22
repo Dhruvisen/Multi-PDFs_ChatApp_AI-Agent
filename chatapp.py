@@ -92,25 +92,15 @@ def main():
         st.title("📁 PDF File's Section")
         pdf_docs = st.file_uploader("Upload your PDF Files & \n Click on the Submit & Process Button ", accept_multiple_files=True)
         if st.button("Submit & Process"):
-            with st.spinner("Processing..."): # user friendly message.
-                raw_text = get_pdf_text(pdf_docs) # get the pdf text
-                text_chunks = get_text_chunks(raw_text) # get the text chunks
-                get_vector_store(text_chunks) # create vector store
+            with st.spinner("Processing..."): 
+                raw_text = get_pdf_text(pdf_docs)
+                text_chunks = get_text_chunks(raw_text) 
+                get_vector_store(text_chunks) 
                 st.success("Done")
         
         st.write("---")
         st.image("img/gkj.jpg")
-        st.write("AI App created by @ Gurpreet Kaur")  # add this line to display the image
 
-
-    # st.markdown(
-    #     """
-    #     <div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #0E1117; padding: 15px; text-align: center;">
-    #         © <a href="https://github.com/gurpreetkaurjethra" target="_blank">Gurpreet Kaur Jethra</a> | Made with ❤️
-    #     </div>
-    #     """,
-    #     unsafe_allow_html=True
-    # )
 
 if __name__ == "__main__":
     main()
